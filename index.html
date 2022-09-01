@@ -26,43 +26,30 @@ let computerSelection = getComputerChoice();
 
 function playRound(computerSelection, playerSelection) {
 
- let computerValue = computerSelection.toLowerCase();
- let playerValue = playerSelection.toLowerCase();
+    let playerValue = playerSelection.toLowerCase();
+    let winner = false;
 
-    const orderOfPower = ['rock', 'scissors' , 'paper'];
-
-
-    console.log(orderOfPower.indexOf(computerValue));
-
-    if (computerSelection !== playerSelection && checkValue(playerValue) === true) {
-
-        
-        if ( orderOfPower.indexOf(computerValue) < orderOfPower.indexOf(playerValue)) {
-
-            console.log( 'You lose!, ' + computerValue + ' beats ' + playerValue);
-
-         
-
-        }
-
-        else {
-
-            console.log( 'You Win!, ' + playerValue + ' beats ' + computerValue);
-
-
-        }
-
-
+    if (computerSelection !== playerValue && checkValue(playerValue) === true) {
+      if ( computerSelection === 'rock' && playerValue === 'scissors')  { winner = false; }
+      else if ( computerSelection === 'rock' && playerValue === 'paper')  {winner = true;} 
+      else if ( computerSelection === 'paper' && playerValue === 'scissors')  {winner = true;} 
+      else if ( computerSelection === 'paper' && playerValue === 'rock')  {winner = false;} 
+      else if ( computerSelection === 'scissors' && playerValue === 'paper')  {winner = false;}
+      else if ( computerSelection === 'scissors' && playerValue === 'rock')  {winner = true;}  
 
     }
-
-    else if (computerSelection = playerSelection) {
-
-        console.log( 'Draw, as you both put ' + computerValue );
-
-
+    else {
+        if (computerSelection === playerValue ) {
+            return 'tie!';
+        }
+        else {  return 'error! not expected result';}
     }
-
+    if (winner) {
+      return 'You Win!, ' + playerValue +' beats ' + computerSelection;
+    }
+    else {
+     return 'You Lose!, ' + computerSelection +' beats ' + playerValue;
+    }
 }
 
 function checkValue(text) {
@@ -74,14 +61,13 @@ function checkValue(text) {
         if (text === choiceArray[i]) {
 
             flag = true;
-
         }
     }
 
     return flag;
 }
 
-playRound(computerSelection,'Rock');
+
 
 
 
