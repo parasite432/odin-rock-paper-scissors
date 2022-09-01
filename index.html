@@ -21,10 +21,67 @@ function getComputerChoice() {
 
 }
 
+let computerSelection = getComputerChoice();
+
+
+function playRound(computerSelection, playerSelection) {
+
+ let computerValue = computerSelection.toLowerCase();
+ let playerValue = playerSelection.toLowerCase();
+
+    const orderOfPower = ['rock', 'scissors' , 'paper'];
+
+
+    console.log(orderOfPower.indexOf(computerValue));
+
+    if (computerSelection !== playerSelection && checkValue(playerValue) === true) {
+
+        
+        if ( orderOfPower.indexOf(computerValue) < orderOfPower.indexOf(playerValue)) {
+
+            console.log( 'You lose!, ' + computerValue + ' beats ' + playerValue);
+
+         
+
+        }
+
+        else {
+
+            console.log( 'You Win!, ' + playerValue + ' beats ' + computerValue);
+
+
+        }
 
 
 
+    }
 
+    else if (computerSelection = playerSelection) {
+
+        console.log( 'Draw, as you both put ' + computerValue );
+
+
+    }
+
+}
+
+function checkValue(text) {
+
+    let flag = false;
+    const choiceArray = ['rock', 'paper', 'scissors'];
+    for (let i =0; i < choiceArray.length; i++) {
+
+        if (text === choiceArray[i]) {
+
+            flag = true;
+
+        }
+    }
+
+    return flag;
+}
+
+playRound(computerSelection,'Rock');
 
 
 
