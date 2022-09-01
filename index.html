@@ -21,7 +21,7 @@ function getComputerChoice() {
 
 }
 
-let computerSelection = getComputerChoice();
+
 
 
 function playRound(computerSelection, playerSelection) {
@@ -67,18 +67,32 @@ function checkValue(text) {
     return flag;
 }
 
+function game() {
+
+    for (let i = 0; i < 5; i++) {
+   
+        let playerValue = prompt('Type in rock, paper or scissors');
+        let computerSelection = getComputerChoice();
+
+        if (playRound(computerSelection, playerValue) === 'error! not expected result') { i--;}
+        console.log(playRound(computerSelection, playerValue));
+
+    }
 
 
+}
 
-
+game();
 
 
 </script>
 
-
-
-
 <body>
     
+<h1>Game over</h1>
+
 </body>
+
+
+
 </html>
