@@ -87,7 +87,7 @@ let outputText = '';
 
     function changeScores(computerCount,playerCount) {
         
-       
+       const score = document.querySelector('.score');
 
         let playerDisplay = document.querySelector('.playerScore');
         playerDisplay.textContent = 'Player Score: ' + playerCount;
@@ -95,8 +95,8 @@ let outputText = '';
         let computerDisplay = document.querySelector('.computerScore');
         computerDisplay.textContent = 'Computer Score: ' + computerCount;
 
-        container.appendChild(playerDisplay);
-        container.appendChild(computerDisplay);
+        score.appendChild(playerDisplay);
+        
 
         
 
