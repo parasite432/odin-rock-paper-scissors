@@ -1,0 +1,76 @@
+.header {
+
+ text-align: center;
+ font-size: 100px;
+ background-color: cadetblue;
+ margin: 0%;
+ padding: 10px;
+
+
+}
+
+html {
+
+    background-color: rgba(95, 158, 160, 0.425);
+
+}
+
+
+body {
+
+
+    margin:0 ;
+    
+
+}
+
+.playerScore,.computerScore {
+
+display: flex;
+font-size: 40px;
+gap: 20px;
+justify-content: space-around;
+padding: 20px;
+
+
+
+
+}
+
+
+.result {
+    
+    font-size: 40px;
+    text-align: center;
+
+}
+
+#container {
+    padding: 40px;
+}
+
+.buttons {
+
+display: flex;
+justify-content: center;
+gap: 20px;
+
+
+}
+
+.playerSelec {
+
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 10px;
+
+
+
+}
+
+.content{
+
+
+
+
+}

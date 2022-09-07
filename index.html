@@ -1,98 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 
-<script>
 
-
-function getComputerChoice() {
-
-    const choiceArray = ['rock', 'paper', 'scissors'];
-
-    let randomIndex = Math.floor(Math.random()*3);
-
-    return choiceArray[randomIndex]
-
-}
-
-
-
-
-function playRound(computerSelection, playerSelection) {
-
-    let playerValue = playerSelection.toLowerCase();
-    let winner = false;
-
-    if (computerSelection !== playerValue && checkValue(playerValue) === true) {
-      if ( computerSelection === 'rock' && playerValue === 'scissors')  { winner = false; }
-      else if ( computerSelection === 'rock' && playerValue === 'paper')  {winner = true;} 
-      else if ( computerSelection === 'paper' && playerValue === 'scissors')  {winner = true;} 
-      else if ( computerSelection === 'paper' && playerValue === 'rock')  {winner = false;} 
-      else if ( computerSelection === 'scissors' && playerValue === 'paper')  {winner = false;}
-      else if ( computerSelection === 'scissors' && playerValue === 'rock')  {winner = true;}  
-
-    }
-    else {
-        if (computerSelection === playerValue ) {
-            return 'tie!';
-        }
-        else {  return 'error! not expected result';}
-    }
-    if (winner) {
-      return 'You Win!, ' + playerValue +' beats ' + computerSelection;
-    }
-    else {
-     return 'You Lose!, ' + computerSelection +' beats ' + playerValue;
-    }
-}
-
-function checkValue(text) {
-
-    let flag = false;
-    const choiceArray = ['rock', 'paper', 'scissors'];
-    for (let i =0; i < choiceArray.length; i++) {
-
-        if (text === choiceArray[i]) {
-
-            flag = true;
-        }
-    }
-
-    return flag;
-}
-
-function game() {
-
-    for (let i = 0; i < 5; i++) {
-   
-        let playerValue = prompt('Type in rock, paper or scissors');
-        let computerSelection = getComputerChoice();
-
-        if (playRound(computerSelection, playerValue) === 'error! not expected result') { i--;}
-        console.log(playRound(computerSelection, playerValue));
-
-    }
-
-
-}
-
-game();
-
-
-</script>
 
 <body>
-    
-<h1>Game over</h1>
+
+    <div class="header">
+        Super Cool Rock Paper Scissors
+    </div>
+
+    <div class="content">
+        <div id="container">
+
+            <div class="result"> Select your choice </div>
+
+            <div class="score" style="display: flex;
+            font-size: 40px;
+            gap: 20px;
+            justify-content: space-around;
+            padding: 20px;">
+                <div class="playerScore"> Player Score:</div>
+                <div class="computerScore"> Computer Score:</div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="buttons">
+            <button id="rock" class=" playerSelec" style="font-size: 100px ;"> 🪨 </button>
+            <button id="paper" class="playerSelec" style="font-size: 100px ;"> 📄</button>
+            <button id="scissors" class="playerSelec" style="font-size: 100px ;"> ✂️ </button>
+        </div>
+
+    </div>
+
 
 </body>
 
+<script>
 
+</script>
 
 </html>
